@@ -1,5 +1,5 @@
 const nodemailer = require('nodemailer');
- 
+
 class MailSender {
   constructor() {
     this._transporter = nodemailer.createTransport({
@@ -11,7 +11,6 @@ class MailSender {
       },
     });
   }
-
 
   sendEmail(targetEmail, content) {
     const message = {
@@ -27,14 +26,8 @@ class MailSender {
       ],
     };
 
-
     return this._transporter.sendMail(message);
   }
-
-
-  
-    
 }
-
 
 module.exports = MailSender;
